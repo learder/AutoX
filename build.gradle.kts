@@ -10,9 +10,14 @@ buildscript {
     }
 
     repositories {
-        mavenLocal()
-        //首选国外镜像加快github CI
         google()
+        maven { setUrl("https://maven.aliyun.com/repository/central") }
+        maven { setUrl("https://maven.aliyun.com/repository/jcenter") }
+        maven { setUrl("https://maven.aliyun.com/repository/google") }
+        maven { setUrl("https://maven.aliyun.com/repository/gradle-plugin") }
+        maven { setUrl("https://maven.aliyun.com/repository/public") }
+        //首选国外镜像加快github CI
+
         mavenCentral()
         maven("https://www.jitpack.io")
         maven("https://maven.aliyun.com/repository/central")
@@ -29,9 +34,14 @@ buildscript {
 
 allprojects {
     repositories {
-        mavenLocal()
-        //首选国外镜像加快github CI
         google()
+        //首选国外镜像加快github CI
+        maven { setUrl("https://maven.aliyun.com/repository/central") }
+        maven { setUrl("https://maven.aliyun.com/repository/jcenter") }
+        maven { setUrl("https://maven.aliyun.com/repository/google") }
+        maven { setUrl("https://maven.aliyun.com/repository/gradle-plugin") }
+        maven { setUrl("https://maven.aliyun.com/repository/public") }
+
         mavenCentral()
         maven("https://www.jitpack.io")
         maven("https://maven.aliyun.com/repository/central")

@@ -91,6 +91,7 @@ dependencies {
     api(fileTree("./libs") { include("dx.jar") })
     implementation("cz.adaptech:tesseract4android:4.1.1")
     implementation(libs.bundles.mlkit)
+    implementation("com.google.mlkit:translate:17.0.3")
 }
 
 tasks.register("buildJsModule") {

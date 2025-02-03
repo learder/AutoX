@@ -394,6 +394,7 @@ class BuildViewModel(private val app: Application, private var source: String) :
         if (isRequiredTesseractOCR) libs.addAll(Constant.Libraries.TESSERACT_OCR)
         if (isRequired7Zip) libs.addAll(Constant.Libraries.P7ZIP)
         if (isRequiredTerminalEmulator) libs.addAll(Constant.Libraries.TERMINAL_EMULATOR)
+        libs.addAll(Constant.Libraries.TRANSLATE)
     }
 
     private fun updatePermissions(): List<String> {
@@ -430,6 +431,7 @@ class BuildViewModel(private val app: Application, private var source: String) :
             isRequiredTesseractOCR = it.containsAll(Constant.Libraries.TESSERACT_OCR)
             isRequired7Zip = it.containsAll(Constant.Libraries.P7ZIP)
             isRequiredOpenCv = it.containsAll(Constant.Libraries.OPEN_CV)
+            it.containsAll(Constant.Libraries.TRANSLATE)
         }
         projectConfig.assets.forEach {
             if (it.form == "${Constant.Protocol.ASSETS}${Constant.Assets.GOOGLE_ML_KIT_OCR}") {

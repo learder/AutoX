@@ -30,6 +30,9 @@ object Constant {
             "libjackpal-androidterm5.so",
             "libjackpal-termexec2.so"
         )
+        val TRANSLATE = listOf(
+                "libtranslate_jni.so"
+        )
     }
 
     object Assets {

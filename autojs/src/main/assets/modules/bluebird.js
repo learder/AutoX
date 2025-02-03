@@ -131,12 +131,16 @@ function _drainQueue(queue) {
 
 function _drainQueueStep(queue) {
     var fn = queue.shift();
-    if (typeof fn !== "function") {
-        fn._settlePromises();
-    } else {
-        var receiver = queue.shift();
-        var arg = queue.shift();
-        fn.call(receiver, arg);
+    try {
+        if (typeof fn !== "function") {
+            fn._settlePromises();
+        } else {
+            var receiver = queue.shift();
+            var arg = queue.shift();
+            fn.call(receiver, arg);
+        }
+    } catch (e) {
+        console.error(e);
     }
 }
 
